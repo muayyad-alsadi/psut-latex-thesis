@@ -1,0 +1,46 @@
+\tableofcontents
+\specialchap{List of Tables}
+\listoftables
+\specialchap{List of Figures}
+\listoffigures
+
+% \chap{List of Appendices}
+
+\NewEnviron{doctable}[2]{%
+    \begin{table*}[!htbp]
+        \centering
+        \begin{tabular}{#2}%
+            \toprule
+            \BODY
+            \bottomrule
+        \end{tabular}
+    \end{table*}
+}
+
+\newglossarystyle{docstyle}
+{%
+    \renewenvironment{theglossary}
+    {%
+        \doctable
+        {1} { ll }
+        Abbreviation & Meaning \\
+        \midrule
+    }{
+        \enddoctable
+    }
+    \renewcommand{\glossarysection}[2][]{}
+    \renewcommand*{\glossaryheader}{}%
+    % Don't do anything between letter groups
+    \renewcommand*{\glsgroupheading}[1]{}%
+    \renewcommand*{\glsgroupskip}{}%
+    % Set display for each the acronym entry
+    \renewcommand{\glossentry}[2]{%
+        \glstarget{##1}{\glsentryshort{##1}}% short form
+        &
+        \glsentrylong{##1}% long form
+        \\% end of row
+    }%
+}
+
+\chap{List of Abbreviations}
+\printnoidxglossary[type=\acronymtype, style=docstyle, title=List of Abbreviations, toctitle=List of Abbreviations]

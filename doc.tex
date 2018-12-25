@@ -1,0 +1,71 @@
+\title{HERE GOES THESIS TITLE}
+\author{HERE GOES AUTHOR NAME \\ Princess Sumaya University for Technology}
+\date{June, 2017}
+
+\begin{document}
+
+\input{cover}
+
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+% \newcommand\chap[1]{\newpage \phantomsection \addcontentsline{toc}{chapter}{#1}}
+
+\newcommand\chap[1]{%
+  \chapter*{\hfill #1 \hfill}%
+  \addcontentsline{toc}{chapter}{#1}
+}
+
+\newcommand\specialchap[1]{%
+  \newpage \phantomsection
+  \addcontentsline{toc}{chapter}{#1}
+}
+
+\input{auth}
+
+\input{committee}
+
+\input{abstract}
+
+\input{dedication}
+
+% \chap{Declaration}
+% I declare that..
+
+\input{ack}
+\input{lists}
+
+\input{ch01}
+\input{ch02}
+\input{ch03}
+\input{ch04}
+\input{ch05}
+
+% References
+\chap{References}
+\printbibliography[heading=none]
+
+
+
+%\appendix
+%\chapter{References}
+%\bibliography{ref}
+
+%\bibliographystyle{../IEEEtran}
+% \bibliographystyle{unsrt}
+%\bibliographystyle{plain}
+% argument is your BibTeX string definitions and bibliography database(s)
+% \bibliography{ref}
+
+
+\specialchap{Abstract in Arabic}
+
+
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{abstract-ar.pdf}
+
+% \appendix
+% \chapter{Appendix Title}
+% \input{appendix}
+
+
+\end{document}
