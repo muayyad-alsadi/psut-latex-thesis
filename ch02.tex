@@ -52,6 +52,23 @@ softmax(o_j) = \frac{e^{o_j}}{ \sum\limits_{i=1}^n e^{o_i} }
 See figure \ref{fig:regularization} and \ref{fig:resnet} to see how we insert graphs.
 Also one can refer sub-figure as in figure \ref{fig:resnet-block}.
 All those were EPS, PDF and SVG using ``save as'' feature in Inkscape.
+And for tables, see table \ref{table:inception-ver-1-4}.
+
+\begin{table*}\caption{Comparing all versions of Inception}\label{table:inception-ver-1-4}
+\centering
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+Model Name & layers & weights & mults & Top-1 accuracy & Top-5 accuracy \\
+\midrule
+Inception v1 & 22 & 6.6M & 1,498M & 69.8 & 89.6 \\
+Inception v2 & 42 & 11M & 1,934M & 73.9 & 91.8 \\
+Inception v3 & 53 & 27M & 5,719M & 78.0 & 93.9 \\
+Inception v4 & 81 & 46M & 13,882M & 80.2 & 95.2 \\
+Inception ResNet V2 & 130 & 59M & 14,882M & 80.4 & 95.3 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
